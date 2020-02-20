@@ -1,5 +1,6 @@
 import subprocess
 import webbrowser
+import datetime
 
 from tkinter import messagebox
 
@@ -21,6 +22,26 @@ def open_chrome(url,new):
 def open_default_browser(url,new):
     webbrowser.open(url,new)
 
+def do_weekly_event():
+    week = datetime.date.today().weekday()
+    if week == 0: #Monday
+        pass #do nothing
+    elif week == 1: #Tuesday
+        pass #do nothing
+    elif week == 2: #Wednesday
+        pass #do nothing
+    elif week == 3: #Thursday
+        url3  = "https://github.com/"
+        open_default_browser(url3,EXIST)
+    elif week == 4: #Friday
+        pass #do nothing
+    elif week == 5: #Saturday
+        pass #do nothing
+    elif week == 6: #Sunday
+        pass #do nothing
+    else : 
+        pass
+
 def main():
     #messagebox.showinfo('AutoLauncher', 'processing start')
 
@@ -33,6 +54,8 @@ def main():
  
     url2 = "http://google.com/"
     open_default_browser(url2,TAB)
+
+    do_weekly_event()
 
     #messagebox.showinfo('AutoLauncher', 'processing end')
 
