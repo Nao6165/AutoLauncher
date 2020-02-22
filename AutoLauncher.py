@@ -25,21 +25,56 @@ def open_default_browser(url,new):
 def do_weekly_event():
     week = datetime.date.today().weekday()
     if week == 0: #Monday
-        pass #do nothing
+        do_Monday_event()
     elif week == 1: #Tuesday
-        pass #do nothing
+        do_Tuesday_event()
     elif week == 2: #Wednesday
-        pass #do nothing
+        do_Wednesday_event()
     elif week == 3: #Thursday
-        url3  = "https://github.com/"
-        open_default_browser(url3,EXIST)
+        do_Thursday_event()
     elif week == 4: #Friday
-        pass #do nothing
+        do_Friday_event()
     elif week == 5: #Saturday
-        pass #do nothing
+        do_Saturday_event()
     elif week == 6: #Sunday
-        pass #do nothing
+        do_Sunday_event()
     else : 
+        pass #do nothing
+
+def do_Monday_event():
+    url = "https://www.gizmodo.jp/"
+    open_default_browser(url,TAB)
+
+def do_Tuesday_event():
+    url = "https://forbesjapan.com/"
+    open_default_browser(url,TAB)
+
+def do_Wednesday_event():
+    url = "https://techable.jp/"
+    open_default_browser(url,TAB)
+
+def do_Thursday_event():
+    url = "https://github.com/"
+    open_default_browser(url,TAB)
+
+def do_Friday_event():
+    url = "https://makezine.jp/blog/category/makers"
+    open_default_browser(url,TAB)
+
+def do_Saturday_event():
+    url = "https://codezine.jp/"
+    open_default_browser(url,TAB)
+
+def do_Sunday_event():
+    url = "https://hatenablog.com/"
+    open_default_browser(url,TAB)
+
+def do_Monthly_event():
+    dt_now = datetime.datetime.now()
+    day = dt_now.day
+    if day == 25:
+        messagebox.showinfo('AutoLauncher', 'Today is Payday!')
+    else:
         pass
 
 def main():
@@ -49,12 +84,9 @@ def main():
 
     open_excel(r'C:\Users\user\Documents\temp\test.xlsx')
  
-    url1  = "https://www.youtube.com/"
-    open_default_browser(url1,EXIST)
+    url  = "http://google.com/"
+    open_default_browser(url,EXIST)
  
-    url2 = "http://google.com/"
-    open_default_browser(url2,TAB)
-
     do_weekly_event()
 
     #messagebox.showinfo('AutoLauncher', 'processing end')
