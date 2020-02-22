@@ -4,6 +4,7 @@ import datetime
 
 from tkinter import messagebox
 
+#webbrowser open option
 EXIST=0
 NEW=1
 TAB=2
