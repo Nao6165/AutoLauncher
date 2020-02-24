@@ -9,9 +9,14 @@ EXIST=0
 NEW=1
 TAB=2
 
-# reference:https://kazusa-pg.com/python-open-folder/
 def open_folder(path):
     subprocess.run('explorer {}'.format(path))
+
+def open_text_file(path):
+    subprocess.Popen([r'C:\WINDOWS\system32\notepad.exe',path])
+
+def open_outlook():
+    subprocess.Popen([r'C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE'])
 
 def open_excel(path):
     subprocess.Popen([r'C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE',path])
@@ -82,6 +87,10 @@ def main():
     #messagebox.showinfo('AutoLauncher', 'processing start')
 
     open_folder('C:')
+
+    open_text_file(r'C:\Users\user\Documents\temp\test.txt')
+
+    open_outlook()
 
     open_excel(r'C:\Users\user\Documents\temp\test.xlsx')
  
