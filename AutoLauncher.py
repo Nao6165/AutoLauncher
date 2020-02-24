@@ -31,51 +31,51 @@ def open_default_browser(url,new):
 def do_weekly_event():
     week = datetime.date.today().weekday()
     if week == 0: #Monday
-        do_Monday_event()
+        do_monday_event()
     elif week == 1: #Tuesday
-        do_Tuesday_event()
+        do_tuesday_event()
     elif week == 2: #Wednesday
-        do_Wednesday_event()
+        do_wednesday_event()
     elif week == 3: #Thursday
-        do_Thursday_event()
+        do_thursday_event()
     elif week == 4: #Friday
-        do_Friday_event()
+        do_friday_event()
     elif week == 5: #Saturday
-        do_Saturday_event()
+        do_saturday_event()
     elif week == 6: #Sunday
-        do_Sunday_event()
+        do_sunday_event()
     else : 
         pass #do nothing
 
-def do_Monday_event():
+def do_monday_event():
     url = "https://www.gizmodo.jp/"
     open_default_browser(url,TAB)
 
-def do_Tuesday_event():
+def do_tuesday_event():
     url = "https://forbesjapan.com/"
     open_default_browser(url,TAB)
 
-def do_Wednesday_event():
+def do_wednesday_event():
     url = "https://techable.jp/"
     open_default_browser(url,TAB)
 
-def do_Thursday_event():
+def do_thursday_event():
     url = "https://github.com/"
     open_default_browser(url,TAB)
 
-def do_Friday_event():
+def do_friday_event():
     url = "https://makezine.jp/blog/category/makers"
     open_default_browser(url,TAB)
 
-def do_Saturday_event():
+def do_saturday_event():
     url = "https://codezine.jp/"
     open_default_browser(url,TAB)
 
-def do_Sunday_event():
+def do_sunday_event():
     url = "https://hatenablog.com/"
     open_default_browser(url,TAB)
 
-def do_Monthly_event():
+def do_monthly_event():
     dt_now = datetime.datetime.now()
     day = dt_now.day
     if day == 25:
@@ -99,7 +99,7 @@ def main():
  
     do_weekly_event()
 
-    do_Monthly_event()
+    do_monthly_event()
 
     #messagebox.showinfo('AutoLauncher', 'processing end')
 
