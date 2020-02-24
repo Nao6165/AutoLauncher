@@ -99,6 +99,8 @@ def main():
  
     do_weekly_event()
 
+    do_Monthly_event()
+
     #messagebox.showinfo('AutoLauncher', 'processing end')
 
 #
