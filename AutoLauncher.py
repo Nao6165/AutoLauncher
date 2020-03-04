@@ -1,6 +1,8 @@
 import subprocess
 import webbrowser
 import datetime
+import os           #ref:https://www.bing.com/profile/history?FORM=EDGEHS
+import shutil       #ref:https://www.bing.com/profile/history?FORM=EDGEHS
 
 from tkinter import messagebox
 
@@ -8,6 +10,10 @@ from tkinter import messagebox
 EXIST=0
 NEW=1
 TAB=2
+
+#write_text_file mode
+overwrite ='w'
+add = 'a'
 
 def open_folder(path):
     subprocess.run('explorer {}'.format(path))
@@ -83,8 +89,30 @@ def do_monthly_event():
     else:
         pass
 
+def write_text_file(path, mode, s_out): # ref:https://note.nkmk.me/python-file-io-open-with/
+    with open(path, mode) as f:
+        f.write(s_out)
+
+def read_text_file(path, s_in):
+    with open(path) as f:
+        s_in = f.read()
+
+
 def main():
     #messagebox.showinfo('AutoLauncher', 'processing start')
+    my_text_file_path = r'C:\Users\user\Documents\temp'+'\\'
+    my_datetime_today = datetime.date.today()
+    str_today = my_datetime_today.strftime('%Y%m%d')
+    my_text_file_path += (r'hogehoge' + str_today + r'.txt')
+    if True == os.path.exists(my_text_file_path):
+        s_in = ''
+        read_text_file(my_text_file_path, s_in)
+        str_now_time = datetime.datetime.now()
+        s_out = (s_in + '\r\n' + r'update ' + str_now_time.strftime('%H%M%S'))
+        write_text_file(my_text_file_path, add, s_out)
+    else:
+        s_out = r'today is ' + str_today
+        write_text_file(my_text_file_path, overwrite, s_out)
 
     open_folder('C:')
 
