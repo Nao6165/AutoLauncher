@@ -97,9 +97,8 @@ def read_text_file(path):
     if True == os.path.exists(path):
         with open(path) as f:
             s_in = f.read()
-        return (True, s_in)
-    else:
-        return (False, '')
+            return (True, s_in)
+    return (False, '')
 
 def main():
     #messagebox.showinfo('AutoLauncher', 'processing start')
