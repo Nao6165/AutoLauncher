@@ -93,22 +93,22 @@ def write_text_file(path, mode, s_out): # ref:https://note.nkmk.me/python-file-i
     with open(path, mode) as f:
         f.write(s_out)
 
-def read_text_file(path, s_in):
+def read_text_file(path):
     if True == os.path.exists(path):
         with open(path) as f:
             s_in = f.read()
-        return True
+        return (True, s_in)
     else:
-        return False
+        return (False, '')
 
 def main():
     #messagebox.showinfo('AutoLauncher', 'processing start')
     my_text_file_path = r'C:\Users\user\Documents\temp\hogehoge.txt'
-    s_in = ''
-    read_text_file(my_text_file_path, s_in)
+    (ret, s_in) = read_text_file(my_text_file_path)
 
-    s_out = (s_in + '\r\n' + r'update ')
-    write_text_file(my_text_file_path, overwrite, s_out)
+    if ret == True :
+        s_out = (s_in + '\r\n' + r'update ')
+        write_text_file(my_text_file_path, overwrite, s_out)
 
     open_folder('C:')
 
